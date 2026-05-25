@@ -18,7 +18,8 @@ import {
   User as UserIcon,
   ChevronsUpDown,
   BarChart3,
-  Sliders
+  Sliders,
+  Home
 } from 'lucide-react';
 
 export default function Sidebar() {
@@ -30,6 +31,7 @@ export default function Sidebar() {
   const [newWorkspaceName, setNewWorkspaceName] = useState('');
 
   const menuItems = [
+    { name: 'Portal Home', icon: Home, path: '/' },
     { name: 'Overview', icon: LayoutDashboard, path: '/dashboard' },
     { name: 'Unified Inbox', icon: Inbox, path: '/inbox' },
     { name: 'Leads & CRM', icon: Users, path: '/leads' },
