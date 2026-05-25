@@ -81,16 +81,18 @@ exports.receiveTwilioWebhook = async (req, res) => {
       }
     }
 
-    // 6. Return TwiML response (if we have a reply)
+    // 6. Dispatch reply via Twilio REST API explicitly to guarantee delivery and avoid TwiML timeouts
     if (replyBody) {
-      const escapedReply = replyBody
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-      return res.type('text/xml').send(`<Response><Message>${escapedReply}</Message></Response>`);
+      console.log(`[Twilio Webhook] Dispatching response via REST API to ${cleanFrom} from ${cleanTo || '+14155238886'}...`);
+      const dispatchResult = await sendWhatsAppMessage(cleanFrom, cleanTo || '+14155238886', replyBody);
+      if (dispatchResult.success) {
+        console.log(`[Twilio Webhook] REST API dispatch succeeded. SID: ${dispatchResult.sid}`);
+      } else {
+        console.error(`[Twilio Webhook] REST API dispatch failed:`, dispatchResult.error);
+      }
     }
-    // No reply to send
+    
+    // Always return empty TwiML response immediately to close webhook and prevent Twilio timeouts
     return res.type('text/xml').send('<Response></Response>');    
 
   } catch (error) {
