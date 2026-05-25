@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-slate-100 min-h-screen font-sans transition-colors duration-300;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.95) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80 shadow-glass rounded-2xl transition-all duration-300;
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:bg-slate-900/70 hover:border-brand-500/30 hover:shadow-glass-hover;
+}
+
+.glass-input {
+  @apply bg-slate-950/50 backdrop-blur-sm border border-slate-800 focus:border-brand-500 text-slate-100 rounded-xl px-4 py-2.5 outline-none transition-all duration-200 placeholder:text-slate-500 focus:ring-2 focus:ring-brand-500/20;
+}
+
+.glass-btn-primary {
+  @apply bg-brand-600 hover:bg-brand-500 text-white rounded-xl px-4 py-2.5 font-medium transition-all duration-200 shadow-brand-glow hover:scale-[1.02] active:scale-[0.98] cursor-pointer;
+}
+
+.glass-btn-secondary {
+  @apply bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/50 hover:border-slate-600 text-slate-100 rounded-xl px-4 py-2.5 font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer;
+}
+
+/* Beautiful Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Dynamic glow animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.glow-effect {
+  animation: pulse-glow 4s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   Premium Light Mode Overrides
+   ========================================================================== */
+
+html.light-mode body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(241, 245, 249, 0.95) 0px, transparent 50%);
+}
+
+/* Global Element Text Colors */
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3,
+html.light-mode h4,
+html.light-mode h5,
+html.light-mode h6,
+html.light-mode .text-white {
+  color: #0f172a !important;
+}
+
+html.light-mode .text-slate-100,
+html.light-mode .text-slate-200,
+html.light-mode .text-slate-300 {
+  color: #1e293b !important;
+}
+
+html.light-mode .text-slate-400,
+html.light-mode .text-slate-450,
+html.light-mode .text-slate-500 {
+  color: #475569 !important;
+}
+
+html.light-mode .text-slate-550,
+html.light-mode .text-slate-600 {
+  color: #64748b !important;
+}
+
+/* Panel Background Overrides */
+html.light-mode .glass-panel,
+html.light-mode .bg-slate-900,
+html.light-mode .bg-slate-900\/40,
+html.light-mode .bg-slate-900\/60,
+html.light-mode .bg-slate-950,
+html.light-mode .bg-slate-950\/40,
+html.light-mode .bg-slate-950\/60,
+html.light-mode .bg-dark-950 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light-mode .glass-panel-hover:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Border Overrides */
+html.light-mode .border-slate-800,
+html.light-mode .border-slate-850,
+html.light-mode .border-slate-900,
+html.light-mode .border-slate-800\/85,
+html.light-mode .border-slate-800\/80,
+html.light-mode .border-slate-900\/60 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Input Fields Overrides */
+html.light-mode .glass-input {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(203, 213, 225, 0.9) !important;
+  color: #0f172a !important;
+}
+html.light-mode .glass-input::placeholder {
+  color: #94a3b8 !important;
+}
+html.light-mode .glass-input:focus {
+  border-color: rgb(139, 92, 246) !important;
+}
+
+/* Button Overrides */
+html.light-mode .glass-btn-secondary {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(203, 213, 225, 0.6) !important;
+  color: #0f172a !important;
+}
+html.light-mode .glass-btn-secondary:hover {
+  background-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Headers & Sidebars */
+html.light-mode header,
+html.light-mode aside {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Scrollbars */
+html.light-mode ::-webkit-scrollbar-track {
+  background-color: rgba(241, 245, 249, 0.2);
+}
+html.light-mode ::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+}
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Active Sidebar Navigation Override */
+html.light-mode .bg-slate-800\/50,
+html.light-mode .hover\:bg-slate-800\/50:hover,
+html.light-mode .bg-slate-800 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+html.light-mode .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+html.light-mode .bg-slate-900\/80 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+/* Custom lead badges/pill cards override */
+html.light-mode .bg-slate-800\/60,
+html.light-mode .bg-slate-800\/40,
+html.light-mode .bg-slate-850 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light-mode .bg-slate-950\/60 {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+}
