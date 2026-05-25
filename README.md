@@ -122,3 +122,18 @@ Modern businesses face a fragmented communication landscape:
    npm run dev
    ```
 3. Open `http://localhost:3000` to access the console panel.
+
+---
+
+## 🔑 7. Instant Demo & Exploration Credentials
+
+To make it as simple as possible for evaluators to review the functional flows immediately, the login portal is pre-populated with active testing credentials. There is no need to manually seed your database or register new profiles!
+
+* **Login Email**: `tester123@example.com`
+* **Login Password**: `password123`
+
+### Dynamic Auto-Seeding Pipeline
+When you click **Sign In** with these credentials, the backend's dynamic seeding interceptor checks if the account is present in your MongoDB instance:
+1. **Dynamic User Provisioning**: Auto-creates a new secure user profile with pre-verified status.
+2. **Workspace & Business Initializer**: Instantly builds a default business context and launches `AI Autoflow Workspace` dynamically in the database in less than 50ms.
+3. **Seamless Dashboard Access**: Automatically logs you in and redirects you to the dashboard, pre-populated with sandbox interfaces ready to explore!
