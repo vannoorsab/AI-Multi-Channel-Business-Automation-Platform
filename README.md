@@ -1,6 +1,6 @@
-# 🚀 Rizora AI - Multi-Channel Business Automation Platform
+# 🚀 AI Autoflow - Multi-Channel Business Automation Platform
 
-Rizora AI is a production-grade, multi-tenant enterprise SaaS platform designed to centralize and automate customer communication across multiple channels (WhatsApp, Webhooks, SMS, and Voice Calls). By integrating a visual workflow automation builder, real-time CRM Kanban boards, and a Google Gemini 2.0 powered RAG (Retrieval-Augmented Generation) agent, Rizora AI enables startups and enterprises to capture, score, and close deals instantly.
+AI Autoflow is a production-grade, multi-tenant enterprise SaaS platform designed to centralize and automate customer communication across multiple channels (WhatsApp, Webhooks, SMS, and Voice Calls). By integrating a visual workflow automation builder, real-time CRM Kanban boards, and a Google Gemini 2.0 powered RAG (Retrieval-Augmented Generation) agent, AI Autoflow enables startups and enterprises to capture, score, and close deals instantly.
 
 ---
 
@@ -16,7 +16,7 @@ Modern businesses face a fragmented communication landscape:
 
 ## 💡 2. The Proposed Solution
 
-**Rizora AI** acts as an intelligent, unified digital operating system for businesses:
+**AI Autoflow** acts as an intelligent, unified digital operating system for businesses:
 * **Unified Inbox**: Consolidates real-time feeds from WhatsApp, Instagram, Webchat, and Voice into a single, high-fidelity conversational console.
 * **Visual Workflow Engine**: A drag-and-drop scripting system that evaluates automation rules on incoming triggers (like `message_received` or `lead_created`), updating lead stages and firing templates automatically.
 * **Gemini 2.0 RAG Agent**: An advanced conversational assistant powered by Google Gemini 2.0. It retrieves relevant, semantic context blocks (Fact Sheets) from an embedded vector database using cosine similarity to answer highly technical FAQ queries.
@@ -43,7 +43,7 @@ Modern businesses face a fragmented communication landscape:
                                             POST Webhook  |  HTTP XML (TwiML)
                                                           v
                                      +-----------------------------------------+
-                                     |      RIZORA AI BACKEND (Node/Express)   | <---+
+                                     |     AI AUTOFLOW BACKEND (Node/Express)  | <---+
                                      +-----------------------------------------+     |
                                           |                   |         |            |
                                           v                   v         |            | Socket.IO
@@ -51,7 +51,7 @@ Modern businesses face a fragmented communication landscape:
                                  | GOOGLE GEMINI  |   |  MONGODB  |     |            |
                                  |  (2.0 Flash /  |   |  (Atlas/  |     v            |
                                  |  Embeddings)   |   |   Local)  |   +--------------------------+
-                                 +----------------+   +-----------+   | RIZORA FRONTEND (NextJS) |
+                                 +----------------+   +-----------+   | FRONTEND CLIENT (NextJS) |
                                                                       +--------------------------+
 ```
 

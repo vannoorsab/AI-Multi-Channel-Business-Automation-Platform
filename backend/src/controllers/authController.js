@@ -127,7 +127,7 @@ exports.login = async (req, res) => {
 
       // 2. Create Business
       const business = await Business.create({
-        name: 'Rizora AI Workspace',
+        name: 'AI Autoflow Workspace',
         owner: tempUser._id,
         members: [{ user: tempUser._id, role: 'business owner' }],
       });
@@ -135,7 +135,7 @@ exports.login = async (req, res) => {
       // 3. Create Workspace
       const workspace = await Workspace.create({
         _id: business._id,
-        name: 'Rizora AI Workspace',
+        name: 'AI Autoflow Workspace',
         owner: tempUser._id,
         settings: {},
       });
