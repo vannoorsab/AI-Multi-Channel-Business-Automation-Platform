@@ -71,9 +71,14 @@ exports.receiveTwilioWebhook = async (req, res) => {
       replyBody = '✅ Your demo request has been received! Our team will contact you shortly to confirm the details.';
       console.log(`[Twilio Webhook] Detected demo request, sending booking confirmation to ${cleanFrom}.`);
     } else {
-      // Use AI-generated reply
-      replyBody = result.aiMessage.content;
-      console.log(`[Twilio Webhook] Sending AI reply via TwiML to ${cleanFrom}: "${replyBody.substring(0, 60)}..."`);
+      // Use AI-generated reply or fallback acknowledgment
+      if (result && result.aiMessage && result.aiMessage.content) {
+        replyBody = result.aiMessage.content;
+        console.log(`[Twilio Webhook] Sending AI reply via TwiML to ${cleanFrom}: "${replyBody.substring(0, 60)}..."`);
+      } else {
+        replyBody = 'Thank you for your message. We will get back to you shortly.';
+        console.log(`[Twilio Webhook] No AI reply generated; sending fallback acknowledgment to ${cleanFrom}.`);
+      }
     }
 
     // 6. Return TwiML response (if we have a reply)

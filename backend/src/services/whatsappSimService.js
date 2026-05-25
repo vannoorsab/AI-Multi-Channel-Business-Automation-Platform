@@ -219,7 +219,7 @@ exports.receiveSimulatedWhatsAppMessage = async (businessId, phone, customerName
 async function processWorkflows(businessId, lead, conversation, incomingMessage, isNewLead) {
   try {
     const business = await Business.findById(businessId);
-    if (!business) return;
+    if (!business) return null;
 
     const triggers = ['message_received'];
     if (isNewLead) triggers.push('lead_created');
@@ -229,6 +229,8 @@ async function processWorkflows(businessId, lead, conversation, incomingMessage,
       trigger: { $in: triggers },
       active: true,
     });
+
+    let aiMessageResult = null;
 
     for (const workflow of workflows) {
       console.log(`Executing automation: "${workflow.name}"`);
@@ -284,7 +286,7 @@ async function processWorkflows(businessId, lead, conversation, incomingMessage,
           case 'send_ai_reply': {
             const isAiEnabled = business.settings?.aiEnabled !== false; // default ON
             if (isAiEnabled) {
-              await triggerAIChatbot(business, lead, conversation, incomingMessage.content);
+              aiMessageResult = await triggerAIChatbot(business, lead, conversation, incomingMessage.content);
             }
             break;
           }
@@ -297,10 +299,9 @@ async function processWorkflows(businessId, lead, conversation, incomingMessage,
     const isAiEnabled = business.settings?.aiEnabled !== false; // default ON
     if (!hasAIReplyWorkflow && isAiEnabled) {
       console.log(`[AI Chatbot] Triggering Gemini auto-reply for business: ${business.name}`);
-      const aiMessage = await triggerAIChatbot(business, lead, conversation, incomingMessage.content);
-      return aiMessage; // Pass AI reply back up the chain
+      aiMessageResult = await triggerAIChatbot(business, lead, conversation, incomingMessage.content);
     }
-    return null;
+    return aiMessageResult;
   } catch (error) {
     console.error('Error running workflows:', error);
     return null;
