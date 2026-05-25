@@ -67,8 +67,8 @@ export default function MarketingPage() {
               <Zap className="w-5.5 h-5.5 fill-white/10" />
             </div>
             <div>
-              <span className="text-lg font-black tracking-tight text-white uppercase">Apex</span>
-              <span className="text-[10px] block font-bold text-brand-400 tracking-widest uppercase mt-[-4px]">Autoflow</span>
+              <span className="text-lg font-black tracking-tight text-white uppercase">Rizora</span>
+              <span className="text-[10px] block font-bold text-brand-400 tracking-widest uppercase mt-[-4px]">AI</span>
             </div>
           </Link>
 
@@ -166,7 +166,7 @@ export default function MarketingPage() {
           <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-500/40 to-transparent"></div>
           <img 
             src="/images/saas_hero_preview.png" 
-            alt="Apex SaaS automation dashboard overview" 
+            alt="Rizora AI SaaS automation dashboard overview" 
             className="w-full h-auto rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-[1.01]"
           />
         </div>
@@ -286,7 +286,7 @@ export default function MarketingPage() {
                 <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Phase 02</span>
                 <h4 className="text-lg font-bold text-white mt-1 mb-2">Trigger Event Processing</h4>
                 <p className="text-slate-400 text-xs leading-relaxed">
-                  Apex checks your database for automated triggers (`lead_created` or `message_received`). Workflow rules launch actions instantly.
+                  Rizora AI checks your database for automated triggers (`lead_created` or `message_received`). Workflow rules launch actions instantly.
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function MarketingPage() {
                 <span className="text-[10px] font-bold text-pink-400 uppercase tracking-widest">Phase 03</span>
                 <h4 className="text-lg font-bold text-white mt-1 mb-2">Gemini AI Auto-Response</h4>
                 <p className="text-slate-400 text-xs leading-relaxed">
-                  If the trigger invokes a Gemini Auto-Reply, Apex evaluates past transcripts, references chatbot config fact sheets, and auto-captures contact information.
+                  If the trigger invokes a Gemini Auto-Reply, Rizora AI evaluates past transcripts, references chatbot config fact sheets, and auto-captures contact information.
                 </p>
               </div>
               <div className="hidden sm:block w-[10%]"></div>
@@ -316,7 +316,7 @@ export default function MarketingPage() {
                 <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Phase 04</span>
                 <h4 className="text-lg font-bold text-white mt-1 mb-2">Automatic Calendar CRM Booking</h4>
                 <p className="text-slate-400 text-xs leading-relaxed">
-                  Upon receiving calendar/email inputs, Apex schedules calendar reminders (`lead.reminders`), records detailed client logs, and assigns qualified reps.
+                  Upon receiving calendar/email inputs, Rizora AI schedules calendar reminders (`lead.reminders`), records detailed client logs, and assigns qualified reps.
                 </p>
               </div>
             </div>
@@ -393,7 +393,7 @@ export default function MarketingPage() {
             Advanced SaaS Tools & Utilities
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Apex Autoflow is packed with professional-grade utilities to guarantee zero downtime and maximum customization.
+            Rizora AI is packed with professional-grade utilities to guarantee zero downtime and maximum customization.
           </p>
         </div>
 
@@ -447,7 +447,7 @@ export default function MarketingPage() {
               Ready to scale customer engagement?
             </h3>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
-              Launch the Apex Autoflow console panel and test real-time AI conversation management.
+              Launch the Rizora AI console panel and test real-time AI conversation management.
             </p>
           </div>
 
@@ -464,7 +464,7 @@ export default function MarketingPage() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 px-6 py-8 text-center text-xs text-slate-500 relative z-10 transition-colors duration-300">
-        <p>© 2026 Apex Autoflow Inc. All rights reserved. Built for intelligent business workflow automation.</p>
+        <p>© 2026 Rizora AI Inc. All rights reserved. Built for intelligent business workflow automation.</p>
       </footer>
 
     </div>

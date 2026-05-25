@@ -7,7 +7,7 @@ import { SocketProvider } from '../context/SocketContext';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata = {
-  title: 'AI Business Automation Platform',
+  title: 'Rizora AI | Business Automation Platform',
   description: 'Enterprise-grade SaaS multi-business platform for automations and unified communications.',
 };
 
